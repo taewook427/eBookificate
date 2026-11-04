@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="eBookificate"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/Theme.k7ebookificate">
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Image Convert Activity -->
+        <activity
+            android:name=".ConvertActivity"
+            android:exported="false" />
+
+        <!-- Text Edit Activity -->
+        <activity
+            android:name=".TextEditActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Storage Activity -->
+        <activity
+            android:name=".StorageActivity"
+            android:exported="false" />
+
+        <!-- Camera Activity -->
+        <activity
+            android:name=".CameraActivity"
+            android:exported="false"/>
+
+        <!-- Convert Foreground Service -->
+        <service
+            android:name=".ConvertService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+    </application>
+</manifest>
+
+<!--
+test837: eBookificate
+resource:
+  res - new - image asset - add foreground, background image
+  drawable - new - vector asset - search, add
+build:
+  file - project structure - dependency - add org.bouncycastle:bcprov-jdk18on com.lambdapioneer.argon2kt:argon2kt
+  build.gradle.kts - set version info
+-->

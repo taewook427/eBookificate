@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/vbox"
+    android:layout_height="match_parent"
+    android:paddingTop="48dp"
+    android:paddingBottom="64dp"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:background="?attr/colorSurface">
+
+    <!-- menu bar -->
+    <LinearLayout style="@style/hbox" android:padding="8dp"
+        android:background="?attr/colorSurfaceVariant">
+        <ImageView style="@style/icon" android:id="@+id/btnBack"
+            android:src="@drawable/ic_arrow_back" android:contentDescription="Back"
+            android:clickable="true" android:focusable="true" />
+        <TextView style="@style/body" android:id="@+id/txtTitle"
+            android:text="Storage" android:textStyle="bold" android:layout_marginStart="4dp"
+            android:layout_width="0dp" android:layout_weight="1"
+            android:maxLines="1" android:ellipsize="end" android:layout_marginEnd="8dp" />
+        <ImageView style="@style/icon" android:id="@+id/btnConvert"
+            android:src="@drawable/ic_convert" android:contentDescription="Conv"
+            android:clickable="true" android:focusable="true"
+            android:padding="12dp" />
+        <ImageView style="@style/icon" android:id="@+id/btnAdd"
+            android:src="@drawable/ic_camera" android:contentDescription="Capture"
+            android:clickable="true" android:focusable="true"
+            android:padding="12dp" />
+        <ImageView style="@style/icon" android:id="@+id/btnExport"
+            android:src="@drawable/ic_export" android:contentDescription="Zip"
+            android:clickable="true" android:focusable="true"
+            android:padding="12dp" />
+        <ImageView style="@style/iconDan" android:id="@+id/btnReset"
+            android:src="@drawable/ic_delete" android:contentDescription="Reset"
+            android:clickable="true" android:focusable="true"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <!-- status -->
+    <TextView style="@style/cap" android:id="@+id/txtProgress"
+        android:text="" android:gravity="center" android:padding="8dp"
+        android:visibility="gone" />
+
+    <!-- image grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerImages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:clipToPadding="false" />
+
+    <!-- paging bar -->
+    <LinearLayout style="@style/hbox" android:padding="8dp"
+        android:gravity="center" android:background="?attr/colorSurfaceVariant">
+        <ImageView style="@style/icon" android:id="@+id/btnPrev"
+            android:src="@drawable/ic_arrow_left" android:contentDescription="Prev"
+            android:clickable="true" android:focusable="true" />
+        <TextView style="@style/body" android:id="@+id/txtPage"
+            android:text="1 / 1" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" />
+        <ImageView style="@style/icon" android:id="@+id/btnNext"
+            android:src="@drawable/ic_arrow_right" android:contentDescription="Next"
+            android:clickable="true" android:focusable="true" />
+    </LinearLayout>
+
+</LinearLayout>

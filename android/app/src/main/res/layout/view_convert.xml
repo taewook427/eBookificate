@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <LinearLayout style="@style/vbox"
+        android:paddingTop="48dp"
+        android:paddingBottom="64dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <!-- back to menu -->
+        <LinearLayout style="@style/hbox">
+            <ImageView style="@style/icon" android:id="@+id/btnBack"
+                android:src="@drawable/ic_arrow_back" android:contentDescription="Back"
+                android:clickable="true" android:focusable="true" />
+            <TextView style="@style/title" android:text="Convert" android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- image selection -->
+        <View android:layout_width="match_parent" android:layout_height="32dp" />
+            <com.google.android.material.card.MaterialCardView style="@style/card">
+                <LinearLayout style="@style/vbox" android:padding="16dp">
+                    <TextView style="@style/cap" android:id="@+id/txtSelected"
+                        android:text="No image selected" android:layout_marginTop="4dp" />
+                    <Button style="@style/btnOut" android:id="@+id/btnSelect"
+                        android:text="Select" android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        <View android:layout_width="match_parent" android:layout_height="16dp" />
+
+        <!-- mode selection -->
+        <com.google.android.material.card.MaterialCardView style="@style/card">
+            <LinearLayout style="@style/vbox" android:padding="16dp">
+                <TextView style="@style/body" android:text="Convert Mode" android:textStyle="bold" />
+
+                <RadioGroup android:id="@+id/radioMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+                    <RadioButton android:id="@+id/modeNone" android:text="None (Remove Metadata)"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true" />
+                    <RadioButton android:id="@+id/modeJpg" android:text="JPG"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <RadioButton android:id="@+id/modePng" android:text="PNG"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <RadioButton android:id="@+id/modeWebp" android:text="WebP"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <RadioButton android:id="@+id/modeWebpLossless" android:text="WebP (Lossless)"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <RadioButton android:id="@+id/modeWebpHalf" android:text="WebP (Half)"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </RadioGroup>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- show status -->
+        <View android:layout_width="match_parent" android:layout_height="24dp" />
+            <TextView style="@style/body" android:id="@+id/txtProgress"
+                android:text="" android:layout_gravity="center_horizontal"
+                android:visibility="gone" />
+        <View android:layout_width="match_parent" android:layout_height="12dp" />
+
+        <!-- convert button -->
+        <Button style="@style/btnPri" android:id="@+id/btnConvert"
+            android:text="Convert"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>
